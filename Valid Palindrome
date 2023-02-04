@@ -1,0 +1,29 @@
+// VALID PALINDROME?
+/*
+  PROBLEM LINK
+  https://leetcode.com/problems/valid-palindrome/description/
+*/
+// SOLUTION
+class Solution {
+public:
+    bool isPalindrome(string s) {
+        if(s.size()==1)
+            return true;
+        string newWord = "";
+        char c=32;
+        for(int i=0; s[i] != '\0'; i++)
+        {
+            if(s[i]>=65 && s[i]<= 90)
+                newWord += (s[i] + 32);
+            else if(s[i]>= 97 && s[i]<= 122)
+                newWord += s[i];
+            else if(s[i]>=48 && s[i]<=57)
+                newWord += s[i];
+        }
+        string reversed = newWord;
+        reverse(reversed.begin(), reversed.end());
+        if(newWord == reversed)
+            return true;
+        return false;
+    }
+};
