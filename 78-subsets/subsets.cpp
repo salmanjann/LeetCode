@@ -23,7 +23,7 @@ vector<vector<int>> subsets(vector<int>& nums){
     vector<int> subset;
     generate_subsets(ans,subset,nums,0);  
 
-    // Time Complexity = O(n!)
+    // Time Complexity = O(2^n)
     return ans;  
 }
 };
