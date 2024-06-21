@@ -1,36 +1,30 @@
 class Solution {
 public:
-    void printSubset(vector<int> subset){
-        for(int i=0;i<subset.size();i++)
-            cout<<subset[i]<<" ";
+    // void printSubset(vector<int> subset){
+    //     for(int i=0;i<subset.size();i++)
+    //         cout<<subset[i]<<" ";
 
-        cout<<"\n";
-    }
+    //     cout<<"\n";
+    // }
 
     void generate_subsets_with_dups(vector<vector<int>> &subsets, vector<int> &subset, vector<int> &nums, int k)
 {
     if (k == nums.size())
     {
         bool canAdd = true;
-        cout<<"Naya subset:\n ";
-        printSubset(subset);
         for (int i = 0; i < subsets.size(); i++)
         {
             if (subsets[i].size() != subset.size())
                 continue;
             canAdd = false;
-            cout<<"Comaring with: \n";
-            printSubset(subsets[i]);
             vector<int> indices;
-            bool idk = false;
+            bool same = false;
             for (int j = 0; j < subset.size(); j++)
             {
                 bool isFound= false;
                 for(int k=0; k<subset.size(); k++){
                     if(subset[j] == subsets[i][k]){
                         bool isSameIndex = false;
-                        cout<<"Indices: \n";
-                        printSubset(indices);
                         for(int l = 0;l<indices.size();l++){
                             if(indices[l]== k){
                                 isSameIndex = true;
@@ -49,16 +43,14 @@ public:
                 if(!isFound)
                     {canAdd = true;break;}
                 if(j == subset.size()-1 && isFound)
-                    idk = true;
+                    same = true;
             }
-            if(idk)
+            if(same)
                 break;
         }
-        if (canAdd){
-            cout<<"Added subset: \n";
-            printSubset(subset);
+        if (canAdd)
             subsets.push_back(subset);
-        }
+        
         return;
     }
     else
