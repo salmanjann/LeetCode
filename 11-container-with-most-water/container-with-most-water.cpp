@@ -7,24 +7,21 @@ public:
         int left = 0;
         int right = nElements;
 
-        int newArea = 0;
+        int lesser = 0;
 
         while(left != right){
-            newArea = 0;
             if(height[left] <= height[right]){
-                newArea = nElements * height[left];
-                if(maxArea < newArea)
-                    maxArea = newArea;
-                
+                lesser = height[left];
                 left++;
             }
             else{
-                newArea = nElements * height[right];
-                if(maxArea < newArea)
-                    maxArea = newArea;
-                
+                lesser = height[right];
                 right--;
             }
+
+            if(maxArea < nElements * lesser)
+                maxArea = nElements * lesser;
+
             nElements--;
         }
 
