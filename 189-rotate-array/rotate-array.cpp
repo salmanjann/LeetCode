@@ -20,9 +20,7 @@ public:
             right--;
         }
 
-        for (int i = 0; i < size; i++)
-            cout << nums[i] << " ";
-        cout << endl;
+        
 
         // 2- Rotate first K elements
 
@@ -38,9 +36,7 @@ public:
             right--;
         }
 
-        for (int i = 0; i < size; i++)
-            cout << nums[i] << " ";
-        cout << endl;
+        
 
         // 3- Rotate last elements
 
