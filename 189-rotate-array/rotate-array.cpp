@@ -1,58 +1,25 @@
 class Solution {
 public:
+    void swap(int &a, int &b){
+        int temp = a;
+        a = b;
+        b = temp;
+    }
     void rotate(vector<int>& nums, int k) {
-        int size = nums.size();
-        if(size <=1)
-            return;
-
-        k %= size;
-        int left = 0;
-        int right = size - 1;
-        int temp;
-
-        // 1- rotate the whole array
-        while (left < right) {
-            temp = nums[left];
-            nums[left] = nums[right];
-            nums[right] = temp;
-
-            left++;
-            right--;
-        }
-
+        int n = nums.size();
+        k= k%n;
         
+        // Reverse the whole array
+        for(int i=0,j=n-1; i<n/2 ; i++,j--)
+            swap(nums[i],nums[j]);
 
-        // 2- Rotate first K elements
+        // Reverse first k elements
+        for(int i=0,j=k-1; i<k/2 ; i++,j--)
+            swap(nums[i],nums[j]);
 
-        left = 0;
-        right = k - 1;
+        // Reverse last elements
+        for(int i=k,j=n-1; i<(n+k)/2 ; i++,j--)
+            swap(nums[i],nums[j]);
 
-        while (left < right) {
-            temp = nums[left];
-            nums[left] = nums[right];
-            nums[right] = temp;
-
-            left++;
-            right--;
-        }
-
-        
-
-        // 3- Rotate last elements
-
-        left = k;
-        right = size - 1;
-
-        // cout << "left " << left << endl;
-        // cout << "right " << right << endl;
-
-        while(left<right){
-            temp = nums[left];
-            nums[left] = nums[right];
-            nums[right] = temp;
-
-            left++;
-            right--;
-        }
     }
 };
