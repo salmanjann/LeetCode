@@ -4,24 +4,19 @@ public:
         long long n = nums.size();
         long long nSubArrays = 0; 
 
-        bool isSubStart = false;
         long long count = 0; 
         for(long long i=0; i<n; i++){
-            if(!isSubStart && nums[i] == 0){
-                isSubStart = true;
+            if(nums[i] == 0){
                 count++;
-                nSubArrays += count;
             }
-            else if (isSubStart && nums[i] == 0){
-                count++;
-                nSubArrays += count;
-            }
-            else if (isSubStart && nums[i] != 0){
+            else{
+                nSubArrays += (count * (count +1)) / 2;
+
                 count = 0;
-                isSubStart = false; 
             }
 
         }
+        nSubArrays += (count * (count +1)) / 2;
 
         return nSubArrays;
     }
