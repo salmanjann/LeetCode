@@ -29,7 +29,7 @@ public:
                 end = mid -1;
         }
 
-        cout<<"Start "<<start << " end "<<end<<endl;
+        // cout<<"Start "<<start << " end "<<end<<endl;
         
         if(closest == -1){
             if(end < 0)
@@ -48,7 +48,7 @@ public:
             }
         }
 
-        cout<<"closest " << closest<<endl;
+        // cout<<"closest " << closest<<endl;
         // if(k==1)
         // {
         //     answer[0] = arr[closest];
@@ -59,7 +59,7 @@ public:
         int right = closest + 1;
 
         for(int i=0; i<k-1; i++){
-        cout<<"Left "<<left<<" Right "<<right<<endl; 
+        // cout<<"Left "<<left<<" Right "<<right<<endl; 
             if(left < 0){
                 right++;
             }
@@ -81,7 +81,7 @@ public:
 
         }
 
-        cout<<"Left "<<left<<" Right "<<right<<endl; 
+        // cout<<"Left "<<left<<" Right "<<right<<endl; 
         left++;
         for(int i= 0; i<k; i++){
             answer[i] = arr[left++];
