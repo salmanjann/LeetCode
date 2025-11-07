@@ -50,7 +50,7 @@ public:
         k=-1;
 
         while(start <= end){
-            cout<<"k "<<k<<" start "<<nums[start]<<" mid "<<nums[mid]<<" end "<<nums[end]<<endl;
+            // cout<<"k "<<k<<" start "<<nums[start]<<" mid "<<nums[mid]<<" end "<<nums[end]<<endl;
             mid = (start + end) / 2;
 
             if(nums[mid] == target){
