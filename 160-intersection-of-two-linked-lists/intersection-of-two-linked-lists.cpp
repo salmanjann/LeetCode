@@ -22,8 +22,8 @@ public:
         else if(m<n)
             for(int i=0; i<n-m; i++,bPtr=bPtr->next);
         
-        cout<<aPtr->val<<endl;
-        cout<<bPtr->val<<endl;
+        // cout<<aPtr->val<<endl;
+        // cout<<bPtr->val<<endl;
 
         while(aPtr != NULL && bPtr != NULL){
             if(aPtr == bPtr)
