@@ -25,25 +25,15 @@ public:
         if (!dupCount)
             if (currentSum > maxSum)
                 maxSum = currentSum;
-        // cout << "Max sum " << maxSum << endl;
-        // cout << "Dups " << dupCount << endl;
 
         for (int right = k; right < n; right++) {
-            // cout << " Before left " << nums[left] << " Count " << freq[nums[left]]<< endl;
-
             currentSum -= nums[left];
             freq[nums[left]]--;
             if (freq[nums[left]] > 0)
                 dupCount--;
-            // cout << " after left " << nums[left] << " Count " << freq[nums[left]]<< endl;
-            // cout << "Dups " << dupCount << endl;
-            
             left++;
 
             // Adding right to window
-            // cout << "Before right " << nums[right] << " Count " << freq[nums[right]]
-            //      << endl;
-            // cout << "Dups " << dupCount << endl;
             currentSum += nums[right];
             if (freq.count(nums[right])) {
                 freq[nums[right]]++;
@@ -51,9 +41,6 @@ public:
                     dupCount++;
             } else
                 freq[nums[right]] = 1;
-            // cout << "Right " << nums[right] << " Count " << freq[nums[right]]
-            //      << endl;
-            // cout << "Dups " << dupCount << endl;
             if (!dupCount)
                 if (currentSum > maxSum)
                     maxSum = currentSum;
