@@ -8,9 +8,9 @@ public class Solution {
 
         while(right < s.Length){
             if (!map.ContainsKey(s[right]))
-    map[s[right]] = 0;
+                map[s[right]] = 0;
 
-map[s[right]]++;
+            map[s[right]]++;
 
 
             if(map[s[right]] > 1){
